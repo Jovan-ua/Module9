@@ -52,12 +52,18 @@ public class MyLinkedList {
     }
 
     public Object get(int index) {
+        if (index < 0 || index >= listSize){
+            throw new IndexOutOfBoundsException("Index Out of Bounds, try another");
+        }
         Node thisNode1 = getNode(index);
         return thisNode1.info;
     }
 
 
     public void remove(int index) {
+        if (index < 0 || index >= listSize){
+            throw new IndexOutOfBoundsException("Index Out of Bounds, try another");
+        }
         Node thisNode = getNode(index);
         if (thisNode.prev != null) {
             thisNode.prev.next = thisNode.next;
